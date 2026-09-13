@@ -9,7 +9,8 @@ char act[20];
 
 void check();
 
-void main() {
+void main()
+{
     printf("Shift Reduce Parser\n");
     printf("\nGrammar:\n");
     printf("\nE->E+E \nE->E/E");
@@ -28,7 +29,8 @@ void main() {
     temp[1] = '\0';
     strcat(act, temp);
     len = strlen(ip_sym);
-    for (i = 0; i < len; i++) {
+    for (i = 0; i < len; i++)
+    {
         stack[st_ptr] = ip_sym[ip_ptr];
         stack[st_ptr + 1] = '\0';
         ip_sym[ip_ptr] = ' ';
@@ -48,11 +50,13 @@ void main() {
 
 }
 
-void check() {
+void check()
+{
     int flag = 0;
     temp2[0] = stack[st_ptr];
     temp2[1] = '\0';
-    if ((!strcmp(temp2, "a")) || (!strcmp(temp2, "b"))) {
+    if ((!strcmp(temp2, "a")) || (!strcmp(temp2, "b")))
+    {
         stack[st_ptr] = 'E';
         if (!strcmp(temp2, "a"))
             printf("\n$%s\t\t%s\t\t\tE->a", stack, ip_sym);
@@ -61,11 +65,13 @@ void check() {
         flag = 1;
     }
 
-    if ((!strcmp(temp2, "+")) || (!strcmp(temp2, "*")) || (!strcmp(temp2, "/"))) {
+    if ((!strcmp(temp2, "+")) || (!strcmp(temp2, "*")) || (!strcmp(temp2, "/")))
+    {
         flag = 1;
     }
 
-    if ((!strcmp(stack, "E+E")) || (!strcmp(stack, "E/E")) || (!strcmp(stack, "E*E"))) {
+    if ((!strcmp(stack, "E+E")) || (!strcmp(stack, "E/E")) || (!strcmp(stack, "E*E")))
+    {
         strcpy(stack, "E");
         st_ptr = 0;
         if (!strcmp(stack, "E+E"))
@@ -77,13 +83,15 @@ void check() {
         flag = 1;
     }
 
-    if (!strcmp(stack, "E") && ip_ptr == len) {
+    if (!strcmp(stack, "E") && ip_ptr == len)
+    {
         printf("\n$%s\t\t%s$\t\t\tAccept", stack, ip_sym);
-          printf("\n\nName: Umesh Pariyar\nRoll No: 20\nLab No: 11");
+        printf("\n\nName: Umesh Pariyar\nRoll No: 20\nLab No: 11");
         exit(0);
     }
 
-    if (flag == 0) {
+    if (flag == 0)
+    {
         printf("\n%s\t\t\t%s\t\t Reject", stack, ip_sym);
     }
     return;

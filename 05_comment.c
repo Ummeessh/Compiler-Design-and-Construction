@@ -74,7 +74,7 @@ int main()
     char input_string[100];
 
     printf("Enter a string to check for comments: ");
-     gets(input_string);
+    gets(input_string);
 
     enum States final_state = dfa_comment_checker(input_string);
 

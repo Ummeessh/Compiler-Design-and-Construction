@@ -2,7 +2,8 @@
 
 enum states { q0, q1, qf, qd };
 
-int main() {
+int main()
+{
     char input[20];
     enum states curr_state = q0;
     int i = 0;
@@ -11,31 +12,33 @@ int main() {
     gets(input);
 
     char ch = input[i];
-    while (ch != '\0') {
-        switch (curr_state) {
-            case q0:
-                if (ch == '0')
-                    curr_state = q1;
-                else
-                    curr_state = qd;
-                break;
+    while (ch != '\0')
+    {
+        switch (curr_state)
+        {
+        case q0:
+            if (ch == '0')
+                curr_state = q1;
+            else
+                curr_state = qd;
+            break;
 
-            case q1:
-                if (ch == '1')
-                    curr_state = qf;
-                else
-                    curr_state = qd;
-                break;
+        case q1:
+            if (ch == '1')
+                curr_state = qf;
+            else
+                curr_state = qd;
+            break;
 
-            case qf:
-                if (ch == '0' || ch == '1')
-                    curr_state = qf;
-                break;
+        case qf:
+            if (ch == '0' || ch == '1')
+                curr_state = qf;
+            break;
 
-            case qd:
-                if (ch == '0' || ch == '1')
-                    curr_state = qd;
-                break;
+        case qd:
+            if (ch == '0' || ch == '1')
+                curr_state = qd;
+            break;
         }
         ch = input[++i];
     }

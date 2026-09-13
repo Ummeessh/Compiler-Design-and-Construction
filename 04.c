@@ -16,19 +16,19 @@ int main()
     {
         switch (curr_state)
         {
-            case q0:
-                if (ch == 'a')
-                    curr_state = q1;
-                else
-                    curr_state = q0;
-                break;
+        case q0:
+            if (ch == 'a')
+                curr_state = q1;
+            else
+                curr_state = q0;
+            break;
 
-            case q1:
-                if (ch == 'a')
-                    curr_state = q0;
-                else
-                    curr_state = q1;
-                break;
+        case q1:
+            if (ch == 'a')
+                curr_state = q0;
+            else
+                curr_state = q1;
+            break;
         }
         ch = input[++i];
     }

@@ -17,16 +17,19 @@ void add(char a[], int *n, char c)
 
 void FIRST(char c, char r[], int *nr)
 {
-    if (!isupper(c)) {
+    if (!isupper(c))
+    {
         add(r, nr, c);
         return;
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         if (p[i][0] != c)
             continue;
 
-        for (int j = 2; p[i][j]; j++) {
+        for (int j = 2; p[i][j]; j++)
+        {
 
             char temp[MAX];
             int nt = 0;
@@ -35,7 +38,8 @@ void FIRST(char c, char r[], int *nr)
 
             int eps = 0;
 
-            for (int k = 0; k < nt; k++) {
+            for (int k = 0; k < nt; k++)
+            {
                 if (temp[k] == '#')
                     eps = 1;
                 else
@@ -56,14 +60,17 @@ void FOLLOW(char c, char r[], int *nr)
     if (c == p[0][0])
         add(r, nr, '$');
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
 
-        for (int j = 2; p[i][j]; j++) {
+        for (int j = 2; p[i][j]; j++)
+        {
 
             if (p[i][j] != c)
                 continue;
 
-            if (p[i][j + 1]) {
+            if (p[i][j + 1])
+            {
 
                 char temp[MAX];
                 int nt = 0;
@@ -72,7 +79,8 @@ void FOLLOW(char c, char r[], int *nr)
 
                 int eps = 0;
 
-                for (int k = 0; k < nt; k++) {
+                for (int k = 0; k < nt; k++)
+                {
 
                     if (temp[k] == '#')
                         eps = 1;
@@ -84,7 +92,8 @@ void FOLLOW(char c, char r[], int *nr)
                     FOLLOW(p[i][0], r, nr);
             }
 
-            else if (p[i][0] != c) {
+            else if (p[i][0] != c)
+            {
                 FOLLOW(p[i][0], r, nr);
             }
         }
@@ -108,11 +117,13 @@ int main()
 
     d = 0;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
 
         int found = 0;
 
-        for (int j = 0; j < d; j++) {
+        for (int j = 0; j < d; j++)
+        {
             if (done[j] == p[i][0])
                 found = 1;
         }
@@ -128,7 +139,8 @@ int main()
 
         printf("FIRST(%c) = { ", p[i][0]);
 
-        for (int j = 0; j < k; j++) {
+        for (int j = 0; j < k; j++)
+        {
 
             printf("%c", first[i][j]);
 
@@ -145,11 +157,13 @@ int main()
 
     d = 0;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
 
         int found = 0;
 
-        for (int j = 0; j < d; j++) {
+        for (int j = 0; j < d; j++)
+        {
             if (done[j] == p[i][0])
                 found = 1;
         }
@@ -165,7 +179,8 @@ int main()
 
         printf("FOLLOW(%c) = { ", p[i][0]);
 
-        for (int j = 0; j < k; j++) {
+        for (int j = 0; j < k; j++)
+        {
 
             printf("%c", follow[i][j]);
 

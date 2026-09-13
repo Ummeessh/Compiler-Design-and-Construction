@@ -16,26 +16,26 @@ int main()
     {
         switch(curr_state)
         {
-            case q0:
-                if(ch == '0')
-                    curr_state = q1;
-                else
-                    curr_state = q0;
-                break;
+        case q0:
+            if(ch == '0')
+                curr_state = q1;
+            else
+                curr_state = q0;
+            break;
 
-            case q1:
-                if(ch == '1')
-                    curr_state = qf;
-                else
-                    curr_state = q1;
-                break;
+        case q1:
+            if(ch == '1')
+                curr_state = qf;
+            else
+                curr_state = q1;
+            break;
 
-            case qf:
-                if(ch == '0')
-                    curr_state = q1;
-                else
-                    curr_state = q0;
-                break;
+        case qf:
+            if(ch == '0')
+                curr_state = q1;
+            else
+                curr_state = q0;
+            break;
         }
         ch = input[++i];
     }
