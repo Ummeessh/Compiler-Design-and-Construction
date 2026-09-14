@@ -162,8 +162,7 @@ int main()
     do
     {
         printf("--- Symbol Table ---");
-        printf("\n1. Insert\n2. Display\n3. Delete");
-        printf("\n4. Search\n5. Modify\n6. Exit");
+        printf("\n1. Insert\n2. Display\n3. Delete\n4. Search\n5. Modify\n6. Exit");
         printf("\n\nChoice: ");
         scanf("%d", &ch);
 
@@ -193,6 +192,6 @@ int main()
         }
     }
     while (ch != 6);
-
+    printf("\nName: Umesh Pariyar\nRoll No: 20\nLab No: 12");
     return 0;
 }
