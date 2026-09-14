@@ -11,7 +11,7 @@ int main()
     gets(string);
     printf("\nPrefixes:");
     find_prefix(string);
-    printf("\nSuffixes");
+    printf("\nSuffixes:");
     find_suffix(string);
     printf("\nEnter i and j for substring: ");
     scanf("%d%d",&i,&j);

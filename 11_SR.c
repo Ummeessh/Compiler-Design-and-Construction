@@ -22,7 +22,7 @@ void main()
     printf("\n\t Stack implementation table");
     printf("\nStack \t\tinput symbol\t\taction");
     printf("\n----------\t-------------\t\t---------");
-    printf("\n$\t\t%s$\t\t\t---", ip_sym);
+    printf("\n$\t\t%s$\t\t---", ip_sym);
 
     strcpy(act, "Shift ");
     temp[0] = ip_sym[ip_ptr];
@@ -35,7 +35,7 @@ void main()
         stack[st_ptr + 1] = '\0';
         ip_sym[ip_ptr] = ' ';
         ip_ptr++;
-        printf("\n$%s\t\t%s$\t\t\t%s", stack, ip_sym, act);
+        printf("\n$%s\t\t%s$\t\t%s", stack, ip_sym, act);
         strcpy(act, "Shift ");
         temp[0] = ip_sym[ip_ptr];
         temp[1] = '\0';
@@ -61,7 +61,7 @@ void check()
         if (!strcmp(temp2, "a"))
             printf("\n$%s\t\t%s\t\t\tE->a", stack, ip_sym);
         else
-            printf("\n$%s\t\t%s$\t\t\tE->b", stack, ip_sym);
+            printf("\n$%s\t\t%s$\t\tE->b", stack, ip_sym);
         flag = 1;
     }
 
@@ -75,24 +75,24 @@ void check()
         strcpy(stack, "E");
         st_ptr = 0;
         if (!strcmp(stack, "E+E"))
-            printf("\n $%s\t\t%s\t\t\tE->E+E", stack, ip_sym);
+            printf("\n$%s\t\t%s\t\t\tE->E+E", stack, ip_sym);
         else if (!strcmp(stack, "E/E"))
-            printf("\n $%s\t\t%s\t\t\tE->E/E", stack, ip_sym);
+            printf("\n$%s\t\t%s\t\t\tE->E/E", stack, ip_sym);
         else if (!strcmp(stack, "E*E"))
-            printf("\n $%s\t\t%s\t\t\tE->E*E", stack, ip_sym);
+            printf("\n$%s\t\t%s\t\t\tE->E*E", stack, ip_sym);
         flag = 1;
     }
 
     if (!strcmp(stack, "E") && ip_ptr == len)
     {
-        printf("\n$%s\t\t%s$\t\t\tAccept", stack, ip_sym);
+        printf("\n$%s\t\t%s$\t\tAccept", stack, ip_sym);
         printf("\n\nName: Umesh Pariyar\nRoll No: 20\nLab No: 11");
         exit(0);
     }
 
     if (flag == 0)
     {
-        printf("\n%s\t\t\t%s\t\t Reject", stack, ip_sym);
+        printf("\n%s\t\t\t%s\t\tReject", stack, ip_sym);
     }
     return;
 }

@@ -83,7 +83,7 @@ int main()
     else if (final_state == S5)
         printf("\nThe input contains a valid multi-line comment.\n");
     else
-        printf("The input does not contain a valid comment.\n");
+        printf("\nThe input does not contain a valid comment.\n");
     printf("\nName: Umesh Pariyar\nRoll No: 20\nLab No: 5");
     return 0;
 }
